@@ -22,12 +22,6 @@
             "displayName": "Visual Studio Community 2022 Release - x86_amd64 - Debug",
             "configurePreset": "Aoc2025",
             "configuration": "Debug"
-        },
-        {
-            "name": "Aoc2025-release",
-            "displayName": "Visual Studio Community 2022 Release - x86_amd64 - Release",
-            "configurePreset": "Aoc2025",
-            "configuration": "Release"
         }
     ]
 }
