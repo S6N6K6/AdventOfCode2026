@@ -3,7 +3,7 @@
     "configurePresets": [
         {
             "name": "Aoc2025",
-            "displayName": "Visual Studio Community 2022 Release - x86_amd64",
+            "displayName": "VisualStudio Preset1",
             "description": "Using compilers for Visual Studio 17 2022 (x86_x64 architecture)",
             "generator": "Visual Studio 17 2022",
             "toolset": "host=x86",
@@ -19,9 +19,15 @@
     "buildPresets": [
         {
             "name": "Aoc2025-debug",
-            "displayName": "Visual Studio Community 2022 Release - x86_amd64 - Debug",
+            "displayName": "DebugBuild",
             "configurePreset": "Aoc2025",
             "configuration": "Debug"
+        },
+        {
+            "name": "Aoc2025-release",
+            "displayName": "ReleaseBuild",
+            "configurePreset": "Aoc2025",
+            "configuration": "Release"
         }
     ]
 }
