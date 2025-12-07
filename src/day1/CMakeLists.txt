@@ -1,4 +1,4 @@
-message("Build for day1 executable solving the day1 problem")
+message("AoC2025 day1 Solution")
 add_executable("AoC25_day1" day1.cpp)
 
 option(EXAMPLES "Build Example version" OFF)
