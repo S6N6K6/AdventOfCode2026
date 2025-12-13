@@ -37,3 +37,16 @@ void printContainer(Iter it, Iter end){
     std::println("{}", *it);
   }
 }
+
+std::vector<int> findDivisors(int n){
+  std::vector<int> result = std::vector<int>();
+  result.reserve(static_cast<int>(std::floor(n/2)));
+  int i = n;
+  while(i > 0 ){
+    if (n % i == 0 && i != n)
+      result.emplace_back(i);
+    i--;
+  }
+  result.shrink_to_fit();
+  return result;
+}

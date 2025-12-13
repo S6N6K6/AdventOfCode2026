@@ -1,5 +1,7 @@
 #include <cstdint>
 #include <print>
+#include <ranges>
+#include <set>
 
 #include "utils.hpp"
 
@@ -15,13 +17,23 @@
 bool containsRepeatedSequence(std::int64_t n)
 {
     std::string stringNumber = std::to_string(n);
+    std::string_view sv = stringNumber;
 
-    if (stringNumber.length() % 2 != 0)
-        return false;
+    auto divisors = findDivisors(sv.length());
+    //std::println("Number: {}", n);
+    for(int div: divisors){
+        //std::print("  Div({}): ", div);
+        auto const chunks = sv | std::ranges::views::chunk(div)
+                               | std::ranges::to<std::set<std::string>>();
+        for (auto chunk: chunks){
+            //std::print("({})", chunk);
+        }
+        //std::print("\n");
+        if (chunks.size() == 1){
+            return true;
+        }
+    }
 
-    int halfSize = stringNumber.length() / 2; // because it can be divide by 2
-    if (strcmp(stringNumber.substr(0, halfSize).c_str(), stringNumber.substr(halfSize).c_str()) == 0)
-        return true;
     return false;
 }
 
@@ -40,12 +52,15 @@ public:
             if (containsRepeatedSequence(i))
             {
                 sum += i;
-                
                 std::println("Found Invalid ID: {}", i);
             }
         }
 
         return sum;
+    }
+
+    std::int64_t findUnsuitableIndices2(){
+
     }
 
 private:
