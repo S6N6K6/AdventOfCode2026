@@ -1,3 +1,7 @@
 CompileFlags:
-  Add: [-std=c++23, -Wall ]
+  Add: [
+    -std=c++23, 
+    -Wall,
+    -"-ID:\AoC2026\src\utils
+    ]
   Compiler: clang++

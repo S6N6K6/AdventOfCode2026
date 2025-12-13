@@ -1,8 +1,7 @@
-#include <filesystem>
-#include <fstream>
 #include <print>
-#include <string>
 #include <vector>
+
+#include "utils.hpp"
 
 const char *DIAL_SEQUENCE_EXAMPLE =
     "L68\nL30\nR48\nL5\nR60\nL55\nL1\nL99\nR14\nL82";
@@ -19,18 +18,6 @@ struct DialSequence {
   DIRECTION direction;
   int value;
 };
-
-std::string readFile(const char *fileName) {
-  /*
-   *   Method to read a file into a string that will be further processed down
-   * the line
-   */
-  auto size = std::filesystem::file_size(fileName);
-  std::string content(size, '\0');
-  std::ifstream in(fileName);
-  in.read(&content[0], size);
-  return content;
-}
 
 std::vector<DialSequence> processSequence(std::string inputSequence) {
   std::vector<std::string> tokens;

@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.25)
 
 project(
-    "AoC2025"
+    "AoC25"
+    VERSION 0.0.2
     LANGUAGES CXX
 )
 
