@@ -11,3 +11,6 @@ add_subdirectory(day1)
 
 # DAY 2 Solution Executable
 add_subdirectory(day2)
+
+# DAY 3 Solution Executable
+add_subdirectory(day3)
